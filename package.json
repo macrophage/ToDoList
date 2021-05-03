@@ -4,8 +4,10 @@
   "description": "todolist with registration ",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js",
-    "server": "nodemon app.js"
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [
     "todo",
@@ -15,9 +17,12 @@
   "author": "Daniel Chelombitkin <AlApMuSt@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "config": "^3.3.6",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-validator": "^6.10.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.7"
   },
   "devDependencies": {
